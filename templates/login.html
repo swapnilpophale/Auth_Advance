@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+
+{% block title %}
+    <title>login page</title>
+{% endblock %}
+
+{% block first %}
+    <form method="post">
+        {% csrf_token %}
+    <input type="text" value="username" name="username"><br>
+    <input type=password value="password" name="password"><br>
+        <input type="submit" value="Submit">
+        <!--For Error Message-->
+    {% for msg in messages %}
+        <p style="color:red">{{msg}}</p>
+    {% endfor %}
+        <hr>
+        <h3>Forgot Password?</h3>
+        <button><a href="{% url 'password_reset' %}">Reset Password</a> </button>
+    </form>
+
+{% endblock %}

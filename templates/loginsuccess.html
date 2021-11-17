@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+
+{% block title %}
+    <title>login page</title>
+{% endblock %}
+
+{% block first %}
+    <h1>Login Successful</h1><hr>
+    <button><a href="{% url 'logout' %}">LogOut</a> </button>
+{% endblock %}

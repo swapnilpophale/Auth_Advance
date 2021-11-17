@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+
+{% block title %}
+    <title>singup page</title>
+{% endblock %}
+
+{% block first %}
+    <form method="post" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form><hr>
+    <h3>Already A User?</h3><button><a href="{% url 'login' %}">Login Here</a> </button>
+{% endblock %}
